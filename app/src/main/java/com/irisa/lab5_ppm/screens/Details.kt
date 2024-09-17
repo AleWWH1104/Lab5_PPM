@@ -17,7 +17,7 @@ import androidx.navigation.NavController
 import com.irisa.lab5_ppm.R
 
 @Composable
-fun Detail_Screen(navController: NavController){
+fun Detail_Screen(navController: NavController, imageId: Int, title: String){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -25,14 +25,14 @@ fun Detail_Screen(navController: NavController){
     ){
         nav_banner(navController)
         Image(
-            painterResource(id = R.drawable.concert1), contentDescription = "",
+            painterResource(id = imageId), contentDescription = "",
             contentScale= ContentScale.Fit )
         Text(modifier = Modifier
             .fillMaxWidth()
             .background(Color(0xFF299DAD)),
             text = "lugar", fontSize = 16.sp)
         Text(modifier = Modifier.padding(10.dp),
-            text = "Title", style = MaterialTheme.typography.titleLarge)
+            text = title, style = MaterialTheme.typography.titleLarge)
         Row( modifier = Modifier
             .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,

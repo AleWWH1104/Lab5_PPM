@@ -39,8 +39,9 @@ fun Event_Item(imageResId: Int, title: String, text: String, navController: NavC
         }
 
         Spacer(modifier = Modifier.height(8.dp))
-        Button(onClick = {navController.navigate(route = AppScreens.Detail.route)}, colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF298DAD)), shape = RectangleShape){
+        Button(onClick = {
+            navController.navigate(AppScreens.Detail.createRoute(imageResId, title))
+        }, colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF298DAD)), shape = RectangleShape) {
             Text(text = title, fontSize = 16.sp, textAlign = TextAlign.Start)
         }
         Text(text = text, fontSize = 12.sp)
